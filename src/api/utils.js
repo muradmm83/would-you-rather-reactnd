@@ -3,5 +3,5 @@ import {
     _getUsers
 } from './_DATA';
 
-export const getInitialData = () => Promise.all(_getUsers(), _getQuestions())
+export const getInitialData = () => Promise.all([_getUsers(), _getQuestions()])
     .then(([users, questions]) => ({ users, questions }));
