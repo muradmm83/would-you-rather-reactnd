@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../actions/authedUser';
 
 
 class Login extends Component {
     state = {
-        selectedUser: ''
+        selectedUser: '',
+        redirect: false,
     }
 
     handleSelect = e => {
@@ -22,11 +24,20 @@ class Login extends Component {
         const user = users[selectedUser];
 
         dispatch(login({ id: user.id, name: user.name, avatarURL: user.avatarURL }));
+
+        this.setState({
+            selectedUser,
+            redirect: true
+        });
     }
 
     render() {
         const { users } = this.props;
-        const { selectedUser } = this.state;
+        const { selectedUser, redirect } = this.state;
+
+        if (redirect) {
+            return (<Redirect to="/" />);
+        }
 
         return (
             <form className="panel" onSubmit={this.handleSubmit}>

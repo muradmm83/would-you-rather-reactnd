@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared';
 import Home from './Home';
+import Login from './Login';
+import PrivateRoute from './PrivateRoute';
 
 class App extends Component {
 
@@ -10,10 +13,17 @@ class App extends Component {
   }
 
   render() {
+    const { authedUser } = this.props;
+    
     return (
-      <Home />
+      <Router>
+        <PrivateRoute path="/" authedUser={authedUser} exact>
+          <Home />
+        </PrivateRoute>
+        <Route path="/login" component={Login} />
+      </Router>
     )
   }
 }
 
-export default connect()(App);
+export default connect(({ authedUser }) => ({ authedUser }))(App);
