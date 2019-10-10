@@ -1,0 +1,164 @@
+@import './color-variables';
+
+* {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    text-align: center;
+    border-bottom: 0.2vh solid $main;
+    margin-top: 5vh;
+
+    .nav-links {
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0 1vh;
+
+            a,
+            span {
+                text-decoration: none;
+                display: block;
+                padding: 1vh;
+                color: $main;
+                transition: all 0.2s ease-in;
+                cursor: pointer;
+            }
+
+            a:hover,
+            span:hover,
+            a.active,
+            span.active {
+                background-color: $main;
+                color: $alternate;
+            }
+
+            img {
+                width: 36px;
+                height: auto;
+                position: relative;
+                top: 10px;
+            }
+        }
+
+        .push {
+            margin-left: 20vh;
+        }
+    }
+}
+
+.panel {
+    border: 1px solid $main;
+    margin: 0 auto;
+    margin-top: 3vh;
+    width: 30%;
+
+    .title {
+        padding: 1vh;
+        border-bottom: 1px solid $main;
+        text-align: center;
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .body {
+        padding: 1vh;
+    }
+
+    .sub-title {
+        color: $main;
+        text-align: center;
+    }
+
+    .tab {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        border-bottom: 1px solid $main;
+
+        .tab-item {
+            flex-grow: 1;
+            display: block;
+            color: $main;
+            text-decoration: none;
+            text-align: center;
+            padding: 1vh;
+
+            &:hover,
+            &.active {
+                background-color: $secondary;
+            }
+
+            &.active {
+                color: black;
+            }
+        }
+    }
+}
+
+.card {
+    border: 1px solid $main;
+    margin: 2vh;
+
+    .title {
+        background-color: $secondary;
+        padding: 1vh;
+        border-bottom: 1px solid $main;
+        font-size: 3vh;
+    }
+
+    .body {
+        display: flex;
+        margin: 3vh 0;
+    }
+
+    .avatar {
+        width: 118px;
+        height: auto;
+    }
+
+    .content {
+        flex-grow: 1;
+        padding: 0 1vh;
+    }
+
+    .border-left {
+        border-left: 1px solid $secondary;
+    }
+
+    .border-right {
+        border-right: 1px solid $secondary;
+    }
+}
+
+select {
+    padding: 1vh;
+    width: 100%;
+    border-color: $secondary;
+}
+
+button {
+    padding: 0.5vh;
+    width: 100%;
+    margin: 0.5vh 0;
+    color: $main;
+    border: 1px solid $main;
+    background-color: transparent;
+    font-size: 2vh;
+    cursor: pointer;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+button.alternate {
+    background-color: $main;
+    color: white;
+}
