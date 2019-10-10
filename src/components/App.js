@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
+import Home from './Home';
 
-class App extends React.Component {
+class App extends Component {
 
   componentDidMount() {
     this.props.dispatch(handleInitialData());
@@ -10,7 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>This is the APP!</h1>
+      <Home />
     )
   }
 }
