@@ -23,7 +23,7 @@ class Login extends Component {
         const { selectedUser } = this.state;
         const user = users[selectedUser];
 
-        dispatch(login({ id: user.id, name: user.name, avatarURL: user.avatarURL }));
+        dispatch(login(user));
 
         this.setState({
             selectedUser,
