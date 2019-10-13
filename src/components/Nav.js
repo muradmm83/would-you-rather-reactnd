@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { logout } from '../actions/authedUser';
 
 class Nav extends Component {
@@ -16,7 +17,9 @@ class Nav extends Component {
         return (
             <nav>
                 <ul className="nav-links">
-                    <li><a href="#">Home</a></li>
+                    <li>
+                        <NavLink to="/" activeClassName="active" exact>Home</NavLink>
+                    </li>
                     <li><a href="#">Question</a></li>
                     <li><a href="#">Leader Board</a></li>
                     {authedUser &&
