@@ -7,7 +7,7 @@
 nav {
     text-align: center;
     border-bottom: 0.2vh solid $main;
-    margin-top: 5vh;
+    margin-top: 2vh;
 
     .nav-links {
         padding: 0;
@@ -54,7 +54,7 @@ nav {
     border: 1px solid $main;
     margin: 0 auto;
     margin-top: 3vh;
-    width: 30%;
+    width: 40%;
 
     .title {
         padding: 1vh;
@@ -81,6 +81,7 @@ nav {
         margin: 0;
         display: flex;
         border-bottom: 1px solid $main;
+        cursor: pointer;
 
         .tab-item {
             flex-grow: 1;
@@ -129,11 +130,63 @@ nav {
     }
 
     .border-left {
-        border-left: 1px solid $secondary;
+        border-left: 2px solid $secondary;
     }
 
     .border-right {
-        border-right: 1px solid $secondary;
+        border-right: 2px solid $secondary;
+    }
+
+    &.center {
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 1vh;
+    }
+
+    .center-label {
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    .answer {
+        border: 1px solid rgb(170, 170, 170);
+        background-color: rgb(238, 238, 238);
+        padding: 2vh;
+        margin: 2vh 0;
+
+        &.selected {
+            position: relative;
+            border-color: $main;
+            background-color: $secondary;
+
+            &:after {
+                content: "Your vote";
+                position: absolute;
+                top: -2vh;
+                right: -1vh;
+                width: 4.5vh;
+                text-align: center;
+                color: white;
+                display: inline-block;
+                background-color: rgb(230, 196, 0);
+                border: 1px solid rgb(230, 196, 0);
+                border-radius: 50px;
+                padding: 0.5vh 0;
+                line-height: 1.6vh;
+                font-size: 1.5vh;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .progress {
+        width: 100%;
+        height: 2vh;
+        border: 1px solid rgb(224, 216, 216);
+        background-color: rgb(224, 216, 216);
+        border-radius: 0.5vh;
+        margin: 1vh 0;
     }
 }
 
