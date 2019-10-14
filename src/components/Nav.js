@@ -38,4 +38,8 @@ class Nav extends Component {
     }
 }
 
-export default connect(({ authedUser }) => ({ authedUser }))(Nav);
+export default connect(({ users, authedUser }) => {
+    return {
+        authedUser: users[authedUser]
+    };
+})(Nav);

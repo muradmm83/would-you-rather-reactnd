@@ -6,9 +6,9 @@ const ProgressBar = styled.div`
     position: relative;
     background-color: #0DBA9F;
     height: 100%;
-    width: ${({ perc }) => perc * 100}%;
+    width: ${({ perc }) => Math.floor(perc * 100)}%;
     ::after {
-        content: "${({perc}) => perc * 100}%";
+        content: "${({perc}) => Math.floor(perc * 100)}%";
         position: absolute;
         color: white;
         top: 6%;

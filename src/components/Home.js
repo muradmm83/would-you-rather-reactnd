@@ -34,5 +34,5 @@ class Home extends Component {
     }
 }
 
-export default connect(({ authedUser }) => ({ authedUser }))(Home);
+export default connect()(Home);
 

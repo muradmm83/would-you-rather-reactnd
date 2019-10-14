@@ -14,9 +14,9 @@ class QuestionList extends Component {
     }
 }
 
-export default connect(({ authedUser, questions }, { filter }) => {
+export default connect(({ authedUser, users, questions }, { filter }) => {
     let keys = Object.keys(questions);
-    const answers = Object.keys(authedUser.answers);
+    const answers = Object.keys(users[authedUser].answers);
 
     if (filter === 'answered') {
         keys = keys.filter(k => answers.includes(k));

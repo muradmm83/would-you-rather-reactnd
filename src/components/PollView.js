@@ -18,7 +18,7 @@ export default connect(({ authedUser, questions, users }, { match }) => {
     const author = users[question.author];
 
     return {
-        authedUser,
+        authedUser: users[authedUser],
         question,
         author
     }

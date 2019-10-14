@@ -9,8 +9,7 @@ class Poll extends Component {
     }
 
     render() {
-        const { question, authedUser, users } = this.props;
-        const author = users[question.author];
+        const { question, author } = this.props;
 
         return (
             <div className="card" key={question.id}>
@@ -38,4 +37,4 @@ class Poll extends Component {
     }
 }
 
-export default withRouter(connect(({ authedUser, users }, { question, history }) => ({ authedUser, question, users, history }))(Poll));
+export default withRouter(connect(({ users }, { question, history }) => ({ question, author: users[question.author], history }))(Poll));

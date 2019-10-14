@@ -19,11 +19,10 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        const { dispatch, users } = this.props;
+        const { dispatch } = this.props;
         const { selectedUser } = this.state;
-        const user = users[selectedUser];
 
-        dispatch(login(user));
+        dispatch(login(selectedUser));
 
         this.setState({
             selectedUser,

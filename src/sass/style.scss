@@ -205,9 +205,12 @@ button {
     background-color: transparent;
     font-size: 2vh;
     cursor: pointer;
+    transition: all 1s ease;
 
-    &[disabled] {
+    &[disabled]  {
         cursor: not-allowed;
+        color: $disabled;
+        border-color: $disabled;
     }
 }
 
