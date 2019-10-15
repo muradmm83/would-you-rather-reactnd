@@ -8,6 +8,7 @@ import Login from './Login';
 import PollView from './PollView';
 import Nav from './Nav';
 import LeaderBoard from './LeaderBoard';
+import AddQuestion from './AddQuestion';
 
 class App extends Component {
 
@@ -24,13 +25,14 @@ class App extends Component {
 
         <PrivateRoute path="/" authedUser={authedUser} exact component={Home} />
         <PrivateRoute path="/poll/:id" authedUser={authedUser} component={PollView} />
+        <PrivateRoute path="/add" authedUser={authedUser} component={AddQuestion} />
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/board">
           <LeaderBoard users={users} />
         </Route>
-        
+
       </Router>
     )
   }
