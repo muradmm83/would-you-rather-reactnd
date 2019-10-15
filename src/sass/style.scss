@@ -112,6 +112,7 @@ nav {
         padding: 1vh;
         border-bottom: 1px solid $main;
         font-size: 3vh;
+        display: block;
     }
 
     .body {
@@ -126,7 +127,7 @@ nav {
 
     .content {
         flex-grow: 1;
-        padding: 0 1vh;
+        padding: 0 2vh;
     }
 
     .border-left {
@@ -188,6 +189,18 @@ nav {
         border-radius: 0.5vh;
         margin: 1vh 0;
     }
+
+    .score {
+        display: block;
+        margin: 1vh auto;
+        text-align: center;
+        background-color: $main;
+        color: white;
+        border: 1px solid $main;
+        border-radius: 100px;
+        font-size: 3vh;
+        width: 40%;
+    }
 }
 
 select {
@@ -217,4 +230,13 @@ button {
 button.alternate {
     background-color: $main;
     color: white;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-grow {
+    flex-grow: 1;
 }

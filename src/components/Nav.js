@@ -21,7 +21,9 @@ class Nav extends Component {
                         <NavLink to="/" activeClassName="active" exact>Home</NavLink>
                     </li>
                     <li><a href="#">Question</a></li>
-                    <li><a href="#">Leader Board</a></li>
+                    <li>
+                        <NavLink to="/board" activeClassName="active" exact>Leader Board</NavLink>
+                    </li>
                     {authedUser &&
                         (
                             <Fragment>
