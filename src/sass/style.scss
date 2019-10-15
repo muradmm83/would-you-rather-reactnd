@@ -216,7 +216,7 @@ button {
     cursor: pointer;
     transition: all 1s ease;
 
-    &[disabled]  {
+    &[disabled] {
         cursor: not-allowed;
         color: $disabled;
         border-color: $disabled;
@@ -235,4 +235,30 @@ button.alternate {
 
 .flex-grow {
     flex-grow: 1;
+}
+
+input[type="text"] {
+    display: block;
+    padding: 1vh 0;
+    width: 100%;
+    margin: 0;
+}
+
+.line-label {
+    position: relative;
+    text-align: center;
+    margin: 0.5vh 0;
+
+    span {
+        background-color: white;
+    }
+
+    hr {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        padding: 0;
+        margin: 0;
+        z-index: -1;
+    }
 }
