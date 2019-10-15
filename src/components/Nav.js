@@ -24,10 +24,11 @@ class Nav extends Component {
                     <li>
                         <NavLink to="/board" activeClassName="active" exact>Leader Board</NavLink>
                     </li>
+                    <li className="flex-grow"></li>
                     {authedUser &&
                         (
                             <Fragment>
-                                <li className="push">{authedUser.name}</li>
+                                <li style={{alignSelf: 'center'}}>{authedUser.name}</li>
                                 <li><img src={authedUser.avatarURL} /></li>
                                 <li><span onClick={this.handleLogout}>Logout</span></li>
                             </Fragment>
