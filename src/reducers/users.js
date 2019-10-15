@@ -21,7 +21,7 @@ export default (state = {}, action) => {
                 ...state,
                 [action.userId]: {
                     ...state[action.userId],
-                    questions: state[action.userId].concat(action.questionId)
+                    questions: state[action.userId].questions.concat(action.questionId)
                 }
             }
 
