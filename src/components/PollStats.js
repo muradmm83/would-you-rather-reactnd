@@ -52,7 +52,7 @@ export default props => {
                     </div>
 
                     <div className={classnames({ 'answer': true, 'selected': selectedOption === 'optionTwo' })}>
-                        {`Would you rather ${question.optionOne.text}`}
+                        {`Would you rather ${question.optionTwo.text}`}
                         <Progress perc={optionTwoVotes / totalVotes} />
                         <p className="center-label">
                             {`${optionTwoVotes} out of ${totalVotes} votes`}
