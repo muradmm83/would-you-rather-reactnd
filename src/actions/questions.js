@@ -1,3 +1,4 @@
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { _saveQuestionAnswer, _saveQuestion } from '../api/_DATA';
 import { userAnswer, userAddQuestion } from './users';
 
@@ -13,11 +14,16 @@ export const answerQuestion = question => ({
 });
 
 export const handleAnswerQuestion = (authedUser, qid, answer) =>
-    dispatch => _saveQuestionAnswer({ authedUser, qid, answer })
-        .then(({ question, user }) => {
-            dispatch(answerQuestion(question));
-            dispatch(userAnswer(user));
-        });
+    dispatch => {
+        dispatch(showLoading());
+
+        _saveQuestionAnswer({ authedUser, qid, answer })
+            .then(({ question, user }) => {
+                dispatch(answerQuestion(question));
+                dispatch(userAnswer(user));
+                dispatch(hideLoading());
+            })
+    };
 
 const addQuestion = question => ({
     type: ADD_QUESTION,
@@ -26,8 +32,13 @@ const addQuestion = question => ({
 
 export const handleAddQuestion =
     (optionOneText, optionTwoText, author) =>
-        dispatch => _saveQuestion({ optionOneText, optionTwoText, author })
-            .then(question => {
-                dispatch(addQuestion(question));
-                dispatch(userAddQuestion(author, question.id));
-            });
+        dispatch => {
+            dispatch(showLoading());
+
+            _saveQuestion({ optionOneText, optionTwoText, author })
+                .then(question => {
+                    dispatch(addQuestion(question));
+                    dispatch(userAddQuestion(author, question.id));
+                    dispatch(hideLoading());
+                })
+        };
