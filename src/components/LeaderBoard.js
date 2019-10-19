@@ -3,7 +3,7 @@ import { calculateUserScore } from '../api/utils';
 
 export default props => {
     const users = calculateUserScore(props.users);
-    console.log(users);
+
     return (
         <Fragment>
             {users.map(u => (

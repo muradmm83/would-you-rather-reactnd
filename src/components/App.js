@@ -31,11 +31,9 @@ class App extends Component {
           <PrivateRoute path="/" authedUser={authedUser} exact component={Home} />
           <PrivateRoute path="/questions/:id" authedUser={authedUser} component={PollView} />
           <PrivateRoute path="/add" authedUser={authedUser} component={AddQuestion} />
+          <PrivateRoute path="/leaderboard" users={users} authedUser={authedUser} component={LeaderBoard} />
           <Route path="/login">
             <Login />
-          </Route>
-          <Route path="/leaderboard">
-            <LeaderBoard users={users} />
           </Route>
           <Route path="*">
             <NotFound />
