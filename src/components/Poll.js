@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 class Poll extends Component {
     viewPool = id => {
         const { history } = this.props;
-        history.push(`/poll/${id}`);
+        history.push(`/questions/${id}`);
     }
 
     render() {

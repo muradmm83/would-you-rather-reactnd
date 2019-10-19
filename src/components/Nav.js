@@ -24,7 +24,7 @@ class Nav extends Component {
                         <NavLink to="/add" activeClassName="active" exact>New Question</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/board" activeClassName="active" exact>Leader Board</NavLink>
+                        <NavLink to="/leaderboard" activeClassName="active" exact>Leader Board</NavLink>
                     </li>
                     <li className="flex-grow"></li>
                     {authedUser &&

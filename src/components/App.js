@@ -29,12 +29,12 @@ class App extends Component {
 
         <Switch>
           <PrivateRoute path="/" authedUser={authedUser} exact component={Home} />
-          <PrivateRoute path="/poll/:id" authedUser={authedUser} component={PollView} />
+          <PrivateRoute path="/questions/:id" authedUser={authedUser} component={PollView} />
           <PrivateRoute path="/add" authedUser={authedUser} component={AddQuestion} />
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/board">
+          <Route path="/leaderboard">
             <LeaderBoard users={users} />
           </Route>
           <Route path="*">

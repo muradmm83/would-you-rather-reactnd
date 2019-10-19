@@ -38,7 +38,7 @@ class PollSubmit extends Component {
         const { selectedAnswer, submitComplete } = this.state;
 
         if (submitComplete) {
-            return (<Redirect to={`/poll/${question.id}`} />);
+            return (<Redirect to={`/questions/${question.id}`} />);
         }
 
         return (
