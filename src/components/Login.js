@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../actions/authedUser';
 
@@ -31,11 +31,13 @@ class Login extends Component {
     }
 
     render() {
-        const { users } = this.props;
+        console.log('LOGIN', this.props);
+        const { users, location } = this.props;
         const { selectedUser, redirect } = this.state;
+        const { from } = location.state || { from: '/' };
 
         if (redirect) {
-            return (<Redirect to="/" />);
+            return (<Redirect to={from} />);
         }
 
         return (
@@ -62,4 +64,4 @@ class Login extends Component {
     }
 }
 
-export default connect(({ users }) => ({ users }))(Login);
+export default withRouter(connect(({ users }) => ({ users }))(Login));
